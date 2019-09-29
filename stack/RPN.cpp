@@ -10,10 +10,11 @@ using namespace std;
 //the first poped element is the second operand
 class Solution {
 public:
+    //判断是否为数字
     static bool isDigit(string &s){
         return !(s=="+"||s=="-"||s=="*"||s=="/");
     }
-    
+    //根据逆波兰式求值
     static int evalRPN(vector<string>& tokens) {
         stack<int> st;
         int val2,val1;
@@ -44,6 +45,7 @@ public:
      }
      return st.top();
     }
+	
     static bool isPriority(string &a,string &b){
     	if(a=="*"||a=="/"){
     		if(b=="*" || b=="/") return false;
